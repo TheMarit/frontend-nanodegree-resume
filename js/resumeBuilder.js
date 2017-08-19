@@ -1,3 +1,103 @@
-/*
-This is empty on purpose! Your code to build the resume will go here.
- */
+var bio = {
+	"name": "Marit Oliemans",
+	"role": "Web Developer",
+	"contacts": {
+		"mobile": "0611481252",
+		"email": "maritoliemans@hotmail.com",
+		"github": "TheMarit",
+		"location": "Amsterdam"
+	},
+	"bioPic": "images/me.jpg",
+	"welcomeMessage": "Welcome to my resume",
+	"skills": ["Javascript", "HTML", "CSS"]
+	
+};
+
+var education = {
+	"schools":[
+	{
+		"name": "Antonius",
+		"city": "kudelstaart",
+		"dates": 2005,
+		"url": "https://rkantonius.nl/"
+	},
+	{
+		"name": "Alkwin",
+		"city": "Uithoorn",
+		"dates": 2011,
+		"url": "https://alkwin.mwp.nl/"
+	}
+	],
+	"onlineCourses": [
+	{
+		"title": "The Webdeveloper Bootcamp",
+		"school": "Udemy",
+		"dates": 2017,
+		"url": "https://www.udemy.com/the-web-developer-bootcamp"
+	},
+	{
+		"title": "Front edn Nanodegree",
+		"school": "Udacity",
+		"dates": 2017,
+		"url": "https://www.udacity.com"
+	}
+	]
+}
+
+
+var work = {
+	"jobs": [
+		{
+			"employer": "cad2reality",
+			"title": "3D-printing specialist",
+			"dates": "April 2015 - Future",
+			"description": "Cad2reality is a Full-Color 3D printing company in the Netherlands, specialized in complex structures like offshore platforms. I work as a 3D modeller and 3d printer operator."
+		},
+		{
+			"employer": "AuPair in America",
+			"title": "AuPair for bradbury family",
+			"dates": "March 2013 - March 2015",
+			"description": "I lived in the United States for two years while working as a nanny for two kids. I studied part time in the US with courses in photography and google sketchup."
+		}
+	]
+};
+
+var projects = {
+	"projects": [
+		{
+		"title": "sample project 1",
+		"dates": "2014",
+		"description": "et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo",
+		"images": ["images/2.jpg","images/1.jpg"]
+		},
+		{
+		"title": "sample project 2",
+		"dates": "2015",
+		"description": "et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo",
+		"images": ["images/2.jpg","images/1.jpg"]
+		}
+	]	
+}
+
+if (bio.skills) {
+	$("#header").append(HTMLskillsStart);
+	for(var i = 0; i < bio.skills.length; i++){
+	$("#skills").append(HTMLskills.replace("%data%", bio.skills[i]));
+	}
+}
+
+for (job in work.jobs){
+	$("#workExperience").append(HTMLworkStart);
+	var empl = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+	var title = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+	$(".work-entry:last").append(empl + title);
+}
+
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+$("#header").prepend(formattedRole);
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+$("#header").prepend(formattedName);
+var email = HTMLemail.replace('%data%', bio.email);
+$("#")
+
+
