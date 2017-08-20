@@ -51,12 +51,14 @@ var work = {
 			"employer": "cad2reality",
 			"title": "3D-printing specialist",
 			"dates": "April 2015 - Future",
+			"loc": "Kudelstaart",
 			"description": "Cad2reality is a Full-Color 3D printing company in the Netherlands, specialized in complex structures like offshore platforms. I work as a 3D modeller and 3d printer operator."
 		},
 		{
 			"employer": "AuPair in America",
 			"title": "AuPair for bradbury family",
 			"dates": "March 2013 - March 2015",
+			"loc": "Beverly, MA",
 			"description": "I lived in the United States for two years while working as a nanny for two kids. I studied part time in the US with courses in photography and google sketchup."
 		}
 	]
@@ -97,7 +99,11 @@ for (job in work.jobs){
 	$("#workExperience").append(HTMLworkStart);
 	var empl = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
 	var title = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+	var dates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+	var loc = HTMLworkLocation.replace("%data%", work.jobs[job].loc);
+	var desc = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 	$(".work-entry:last").append(empl + title);
+	$(".work-entry:last").append(dates + loc + desc);
 }
 
 var mobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
