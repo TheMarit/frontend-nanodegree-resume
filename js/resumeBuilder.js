@@ -5,7 +5,7 @@ var bio = {
 		"mobile": "0611481252",
 		"email": "maritoliemans@hotmail.com",
 		"github": "TheMarit",
-		"location": "Amsterdam"
+		"loc": "Amsterdam"
 	},
 	"bioPic": "images/me.jpg",
 	"welcomeMessage": "Welcome to my resume",
@@ -79,6 +79,13 @@ var projects = {
 	]	
 }
 
+var bioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+$("#header").append(bioPic);
+var welcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+$("#header").append(welcomeMessage);
+
+
+
 if (bio.skills) {
 	$("#header").append(HTMLskillsStart);
 	for(var i = 0; i < bio.skills.length; i++){
@@ -93,11 +100,19 @@ for (job in work.jobs){
 	$(".work-entry:last").append(empl + title);
 }
 
+var mobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
+$("#topContacts").prepend(mobile);
+var github = HTMLgithub.replace('%data%', bio.contacts.github);
+$("#topContacts").prepend(github);
+var email = HTMLemail.replace('%data%', bio.contacts.email);
+$("#topContacts").prepend(email);
+var loc = HTMLlocation.replace('%data%', bio.contacts.loc);
+$("#topContacts").prepend(loc);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 $("#header").prepend(formattedRole);
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 $("#header").prepend(formattedName);
-var email = HTMLemail.replace('%data%', bio.email);
-$("#")
+
+
 
 
