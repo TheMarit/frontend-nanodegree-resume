@@ -1,3 +1,5 @@
+
+
 var bio = {
 	"name": "Marit Oliemans",
 	"role": "Web Developer",
@@ -95,6 +97,8 @@ if (bio.skills) {
 	}
 }
 
+function displayWork(){
+
 for (job in work.jobs){
 	$("#workExperience").append(HTMLworkStart);
 	var empl = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
@@ -105,6 +109,10 @@ for (job in work.jobs){
 	$(".work-entry:last").append(empl + title);
 	$(".work-entry:last").append(dates + loc + desc);
 }
+
+}
+
+displayWork();
 
 var mobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
 $("#topContacts").prepend(mobile);
@@ -119,6 +127,6 @@ $("#header").prepend(formattedRole);
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 $("#header").prepend(formattedName);
 
-
+$("#main").append(internationalizeButton);
 
 
