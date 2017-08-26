@@ -83,6 +83,8 @@ var projects = {
 	]	
 }
 
+
+
 var bioPic = HTMLbioPic.replace("%data%", bio.bioPic);
 $("#header").append(bioPic);
 var welcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
@@ -130,3 +132,19 @@ $("#header").prepend(formattedName);
 $("#main").append(internationalizeButton);
 
 
+projects.display = function(){
+	for (project in projects.projects){
+		$("#projects").append(HTMLprojectStart);
+		var title = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+		var dates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+		var desc = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+		$(".project-entry:last").append(title + dates + desc);
+		
+		for (img in projects.projects[project].images) {
+			var image = HTMLprojectImage.replace("%data%", projects.projects[project].images[img]);
+			$(".project-entry:last").append(image)
+		}
+	}
+}
+
+projects.display()
