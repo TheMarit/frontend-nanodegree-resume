@@ -1,8 +1,8 @@
 
 
 var bio = {
-	"name": "Marit Oliemans",
-	"role": "Web Developer",
+	"name": "MARIT OLIEMANS",
+	"role": "FRONT-END DEVELOPER",
 	"contacts": {
 		"mobile": "0611481252",
 		"email": "maritoliemans@hotmail.com",
@@ -11,7 +11,7 @@ var bio = {
 	},
 	"bioPic": "images/me.jpg",
 	"welcomeMessage": "Welcome to my resume",
-	"skills": ["Javascript", "HTML", "CSS"]
+	"skills": ["Javascript", "HTML", "CSS", "Python"]
 	
 };
 
@@ -21,13 +21,15 @@ var education = {
 		"name": "Antonius",
 		"city": "kudelstaart",
 		"dates": 2005,
-		"url": "https://rkantonius.nl/"
+		"url": "https://rkantonius.nl/",
+		"degree": "elementry school"
 	},
 	{
 		"name": "Alkwin",
 		"city": "Uithoorn",
 		"dates": 2011,
-		"url": "https://alkwin.mwp.nl/"
+		"url": "https://alkwin.mwp.nl/",
+		"degree": "high school"
 	}
 	],
 	"onlineCourses": [
@@ -147,4 +149,30 @@ projects.display = function(){
 	}
 }
 
-projects.display()
+projects.display();
+
+
+education.display = function(){
+	for (school in education.schools){
+		$("#education").append(HTMLschoolStart);
+		var name = HTMLschoolName.replace("%data%", education.schools[school].name).replace("#", education.schools[school].url);
+		var degree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+		var dates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+		var loc = HTMLschoolLocation.replace("%data%", education.schools[school].city)
+		$(".education-entry:last").append(name + degree + dates + loc);
+		}
+		$("#education").append(HTMLonlineClasses);
+	for (onlineCourse in education.onlineCourses){
+		$("#education").append(HTMLschoolStart);
+		var name = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourse].title);
+		var school = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourse].school);
+		var dates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourse].dates);
+		var url = HTMLonlineURL.replace("%data%", education.onlineCourses[onlineCourse].url)
+		$(".education-entry:last").append(name + school + dates + url);
+		}
+
+	}
+
+education.display();
+
+$("#mapDiv").append(googleMap);
