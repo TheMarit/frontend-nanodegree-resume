@@ -1,16 +1,16 @@
 var model = {
 	bio : {
-		"name": "MARIT OLIEMANS",
+		"name": "MARIT OLIEMANS FISCHER",
 		"role": "FRONT-END DEVELOPER",
 		"contacts": {
-			"mobile": "0611481252",
+			"mobile": "4352565792",
 			"email": "maritoliemans@hotmail.com",
 			"github": "TheMarit",
-			"loc": "Amsterdam"
+			"loc": "Logan"
 		},
 		"bioPic": "images/me.jpg",
 		"welcomeMessage": "Welcome to my resume",
-		"skills": ["Javascript", "HTML", "CSS", "Python"]
+		"skills": ["Javascript", "HTML", "CSS", "Python", "jQuery"]
 	},
 	education : {
 		"schools":[
@@ -37,7 +37,7 @@ var model = {
 			"url": "https://www.udemy.com/the-web-developer-bootcamp"
 		},
 		{
-			"title": "Front edn Nanodegree",
+			"title": "Front end Nanodegree",
 			"school": "Udacity",
 			"dates": 2017,
 			"url": "https://www.udacity.com"
@@ -47,9 +47,16 @@ var model = {
 	work : {
 		"jobs": [
 			{
+				"employer": "Freelance",
+				"title": "Web Developer",
+				"dates": "November 2017 - Future",
+				"loc": "Logan, UT",
+				"description": "Currently working as a freelance developer, while continuing to learn more about development."
+			},
+			{
 				"employer": "cad2reality",
 				"title": "3D-printing specialist",
-				"dates": "April 2015 - Future",
+				"dates": "April 2015 - November 2017",
 				"loc": "Kudelstaart",
 				"description": "Cad2reality is a Full-Color 3D printing company in the Netherlands, specialized in complex structures like offshore platforms. I work as a 3D modeller and 3d printer operator."
 			},
@@ -60,6 +67,7 @@ var model = {
 				"loc": "Beverly, MA",
 				"description": "I lived in the United States for two years while working as a nanny for two kids. I studied part time in the US with courses in photography and google sketchup."
 			}
+			
 		]
 	}, 
 	projects : {
